@@ -12,6 +12,7 @@
         table{
             width: 500px;
             border-collapse: collapse;
+            position: relative;
         }
 
         td, th{
@@ -28,15 +29,41 @@
         .num{
             text-align: right;
         }
+
+        caption{
+            font: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
+        }
+
+        .population{
+            width: 100px;
+        }
+
+        tbody > tr:nth-child(odd){
+            background-color: red;
+        }
+
+        tbody > tr:nth-child(even){
+            background-color: black;
+        }
+
+        thead > tr > th{
+            position: sticky;
+            top: 0;
+            background-color: gray;
+        }
     </style>
 </head>
 <body>
     <h1>Uso de tabelas grandes</h1>
     <table>
+        <caption>População da unidades federativas</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col" class="population">População</th>
             </tr>
         </thead>
         <tbody>
@@ -151,7 +178,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Total de habitantes</th>
+                <th scope="row">Total de habitantes</th>
                 <td class="num">212.420.972</td>
             </tr>
         </tfoot>
